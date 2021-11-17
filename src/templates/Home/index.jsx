@@ -17,6 +17,7 @@ export class Home extends Component {
   loadPosts = async () => {
     const postsAndPhotos = await loadPosts();
     this.setState({ posts: postsAndPhotos });
+    console.log("poka'");
   };
 
   render() {
