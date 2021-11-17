@@ -1,10 +1,11 @@
-import "./App.css";
+import "./styles.css";
+
 import { Component } from "react";
 
-import { loadPosts } from "./utils/load-posts";
-import { Posts } from "./components/Posts";
+import { loadPosts } from "../../utils/load-posts";
+import { Posts } from "../../components/Posts";
 
-class App extends Component {
+export class Home extends Component {
   state = {
     posts: [],
   };
@@ -12,6 +13,7 @@ class App extends Component {
   async componentDidMount() {
     await this.loadPosts();
   }
+
   loadPosts = async () => {
     const postsAndPhotos = await loadPosts();
     this.setState({ posts: postsAndPhotos });
@@ -27,5 +29,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
